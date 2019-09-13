@@ -197,6 +197,10 @@ function keyedToPlainFormData(keyedFormData) {
   return keyedFormData.map(keyedItem => keyedItem.item);
 }
 
+function collapseGenetic(){
+  document.getElementsByClassName("genetic_sec")[0].getElementsByTagName("a")[0].click()
+}
+
 class ArrayField extends Component {
   static defaultProps = {
     uiSchema: {},
@@ -314,6 +318,12 @@ class ArrayField extends Component {
           }
         }
       }
+
+      if (document.getElementsByClassName("genetic_sec").length > 0) {
+        document.getElementsByClassName("genetic_sec")[0].getElementsByTagName("a")[0].click()
+        setTimeout(collapseGenetic,10)
+      }
+      
       const newKeyedFormData = keyedFormData.filter((_, i) => i !== index);
       this.setState(
         {
