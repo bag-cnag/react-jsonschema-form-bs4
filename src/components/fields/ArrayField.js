@@ -112,7 +112,7 @@ function DefaultFixedArrayFieldTemplate(props) {
         required={props.required}
       />
 
-      <div className="row"
+      <div className="row">
 
       {(props.uiSchema["ui:description"] || props.schema.description) && (
         <div
@@ -153,7 +153,7 @@ function DefaultNormalArrayFieldTemplate(props) {
         required={props.required}
       />
 
-      <div className="row"
+      <div className="row">
 
       {(props.uiSchema["ui:description"] || props.schema.description) && (
         <ArrayFieldDescription
