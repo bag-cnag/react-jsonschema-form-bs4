@@ -112,6 +112,8 @@ function DefaultFixedArrayFieldTemplate(props) {
         required={props.required}
       />
 
+      <div className="row"
+
       {(props.uiSchema["ui:description"] || props.schema.description) && (
         <div
           className="field-description"
@@ -125,6 +127,9 @@ function DefaultFixedArrayFieldTemplate(props) {
         key={`array-item-list-${props.idSchema.$id}`}>
         {props.items && props.items.map(DefaultArrayItem)}
       </div>
+
+      </div>
+
 
       {props.canAdd && (
         <AddButton
@@ -148,6 +153,8 @@ function DefaultNormalArrayFieldTemplate(props) {
         required={props.required}
       />
 
+      <div className="row"
+
       {(props.uiSchema["ui:description"] || props.schema.description) && (
         <ArrayFieldDescription
           key={`array-field-description-${props.idSchema.$id}`}
@@ -164,6 +171,9 @@ function DefaultNormalArrayFieldTemplate(props) {
         key={`array-item-list-${props.idSchema.$id}`}>
         {props.items && props.items.map(p => DefaultArrayItem(p))}
       </div>
+
+      </div>
+
 
       {props.canAdd && (
         <AddButton
