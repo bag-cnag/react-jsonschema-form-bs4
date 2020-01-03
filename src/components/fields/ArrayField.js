@@ -112,7 +112,6 @@ function DefaultFixedArrayFieldTemplate(props) {
         required={props.required}
       />
 
-      <div className="row">
 
       {(props.uiSchema["ui:description"] || props.schema.description) && (
         <div
@@ -126,8 +125,6 @@ function DefaultFixedArrayFieldTemplate(props) {
         className="row array-item-list"
         key={`array-item-list-${props.idSchema.$id}`}>
         {props.items && props.items.map(DefaultArrayItem)}
-      </div>
-
       </div>
 
 
@@ -153,7 +150,6 @@ function DefaultNormalArrayFieldTemplate(props) {
         required={props.required}
       />
 
-      <div className="row">
 
       {(props.uiSchema["ui:description"] || props.schema.description) && (
         <ArrayFieldDescription
@@ -172,8 +168,6 @@ function DefaultNormalArrayFieldTemplate(props) {
         {props.items && props.items.map(p => DefaultArrayItem(p))}
       </div>
 
-      </div>
-
 
       {props.canAdd && (
         <AddButton
@@ -189,6 +183,10 @@ function DefaultNormalArrayFieldTemplate(props) {
 
 function collapseGenetic(){
   document.getElementsByClassName("genetic_sec")[0].getElementsByTagName("a")[0].click()
+}
+
+function collapseMeasurements() {
+  document.getElementsByClassName("measurements_sec")[0].getElementsByTagName("a")[0].click();
 }
 
 class ArrayField extends Component {
@@ -271,6 +269,11 @@ class ArrayField extends Component {
         document.getElementsByClassName("genetic_sec")[0].getElementsByTagName("a")[0].click()
         setTimeout(collapseGenetic,10)
       }
+
+      if (document.getElementsByClassName("measurements_sec").length > 0) {
+          document.getElementsByClassName("measurements_sec")[0].getElementsByTagName("a")[0].click();
+          setTimeout(collapseMeasurements, 10);
+        }
       
       onChange(formData.filter((_, i) => i !== index), newErrorSchema);
     };
