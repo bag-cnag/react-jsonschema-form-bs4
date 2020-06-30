@@ -189,6 +189,10 @@ function collapseMeasurements() {
   document.getElementsByClassName("measurements_sec")[0].getElementsByTagName("a")[0].click();
 }
 
+function collapseDiagnosis() {
+  document.getElementsByClassName("diagnosis_sec")[0].getElementsByTagName("a")[0].click();
+}
+
 class ArrayField extends Component {
   static defaultProps = {
     uiSchema: {},
@@ -273,6 +277,11 @@ class ArrayField extends Component {
       if (document.getElementsByClassName("measurements_sec").length > 0) {
           document.getElementsByClassName("measurements_sec")[0].getElementsByTagName("a")[0].click();
           setTimeout(collapseMeasurements, 10);
+        }
+      
+       if (document.getElementsByClassName("diagnosis_sec").length > 0) {
+          document.getElementsByClassName("diagnosis_sec")[0].getElementsByTagName("a")[0].click();
+          setTimeout(collapseDiagnosis, 10);
         }
       
       onChange(formData.filter((_, i) => i !== index), newErrorSchema);
